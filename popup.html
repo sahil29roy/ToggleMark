@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 300px;
+      padding: 15px;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+    .input-group {
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #0078d4;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    button:hover {
+      background-color: #106ebe;
+    }
+    .status {
+      margin-top: 10px;
+      padding: 5px;
+      text-align: center;
+      border-radius: 3px;
+    }
+    .success {
+      background-color: #dff6dd;
+      color: #107c10;
+    }
+    .error {
+      background-color: #fde7e9;
+      color: #a80000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>ToggleMark</h3>
+    <div class="input-group">
+      <label for="reminder-time">Set Reminder (minutes):</label>
+      <select id="reminder-time">
+        <option value="">No reminder</option>
+        <option value="5">5 minutes</option>
+        <option value="10">10 minutes</option>
+        <option value="15">15 minutes</option>
+        <option value="30">30 minutes</option>
+        <option value="60">1 hour</option>
+        <option value="120">2 hours</option>
+        <option value="240">4 hours</option>
+        <option value="1440">1 day</option>
+      </select>
+    </div>
+    <button id="set-reminder-btn">Set Reminder for Current Page</button>
+    <div id="status-message" class="status" style="display: none;"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

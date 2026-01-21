@@ -5,7 +5,10 @@
     "description": "One-click to add or remove bookmarks from your toolbar.",
     "permissions": [
         "bookmarks",
-        "tabs"
+        "tabs",
+        "storage",
+        "alarms",
+        "notifications"
     ],
     "background": {
         "scripts": [
@@ -14,12 +17,22 @@
         "persistent": false
     },
     "browser_action": {
-        "default_icon": "icons/unbookmarked.png",
-        "default_title": "Toggle Bookmark"
+        "default_icon": "icons/unbookmarked.svg",
+        "default_title": "Toggle Bookmark",
+        "default_popup": "popup.html"
     },
     "icons": {
-        "48": "icons/unbookmarked.png",
-        "96": "icons/unbookmarked.png"
+        "48": "icons/unbookmarked.svg",
+        "96": "icons/unbookmarked.svg"
+    },
+    "commands": {
+        "_execute_browser_action": {
+            "suggested_key": {
+                "default": "Alt+Shift+B",
+                "mac": "MacCtrl+Shift+B"
+            },
+            "description": "Toggle Bookmark"
+        }
     },
     "browser_specific_settings": {
         "gecko": {
